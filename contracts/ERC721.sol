@@ -37,4 +37,21 @@ contract ERC721Token is ERC721 {
         );
     }
 
+    function getTokenURI(string memory _name) internal view returns (string memory){
+        bytes memory dataURI = abi.encodePacked(
+            '{',
+                '"name": "Web3Bridge Cohort X #', s_tokenCounter.toString(), '",',
+                '"description": "Students in Web3bridge",',
+                '"image": "', generateCharacter(_name), '"',
+            '}'
+        );
+        return string(
+            abi.encodePacked(
+                "data:application/json;base64,",
+                Base64.encode(dataURI)
+            )
+        );
+    }
+
+    
 }
