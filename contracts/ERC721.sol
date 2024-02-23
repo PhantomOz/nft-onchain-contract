@@ -13,4 +13,10 @@ contract ERC721Token is ERC721 {
         s_tokenCounter = 0;
     }
 
+    function mintNft(string memory _name) external {
+        require(bytes(_name).length > 3);
+        s_tokenIdToUri[s_tokenCounter] = getTokenURI(_name);
+        _safeMint(msg.sender, s_tokenCounter);
+        s_tokenCounter++;
+    }
 }
