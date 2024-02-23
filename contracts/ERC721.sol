@@ -53,5 +53,10 @@ contract ERC721Token is ERC721 {
         );
     }
 
+    function tokenURI(
+        uint256 _tokenId
+    ) external view override returns (string memory) {
+        return s_tokenIdToUri[_tokenId];
+    }
     
 }
