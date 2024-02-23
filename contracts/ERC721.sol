@@ -9,7 +9,7 @@ contract ERC721Token is ERC721 {
     uint256 private s_tokenCounter;
     mapping(uint256 => string) private s_tokenIdToUri;
 
-    constructor(string calldata _name, string calldata _symbol) ERC721(_name, _symbol) {
+    constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
         s_tokenCounter = 0;
     }
 
@@ -55,7 +55,7 @@ contract ERC721Token is ERC721 {
 
     function tokenURI(
         uint256 _tokenId
-    ) external view override returns (string memory) {
+    ) public view override returns (string memory) {
         return s_tokenIdToUri[_tokenId];
     }
     
