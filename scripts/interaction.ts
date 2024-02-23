@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 async function main() {
   const NAME = "Favour Aniogor";
-  const ADDRESS = "0x10A6608a198a2BC946e2cDE6A1a34Cc218Da0EFA";
+  const ADDRESS = "0xa67972265516E4BFEA3d4f9c70749768be2d29F8";
 
   const nft = await ethers.getContractAt("ERC721Token", ADDRESS);
 
